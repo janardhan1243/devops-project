@@ -6,7 +6,7 @@
     key: ${{ secrets.EC2_SSH_KEY }}
     port: 22
     script: |
-      cd /home/ec2-user/devops-project || exit 1
+      cd /home/ec2-user/devops-project
       git pull
       docker stop $(docker ps -q) || true
       docker rm $(docker ps -aq) || true
